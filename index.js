@@ -10,7 +10,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const API_URL ="https://api.realinspire.tech/v1/quotes/random";
-const myAPI = "cRd1xHXHy4ga1K/PzOd6LA==Ap5k3YsIxERF5N9Z";
+const myAPI = "AIzaSyD2cfS0e7IvJL-Sud-lwH5wdTR9Q2ntFwc";
 
 app.get("/", async (req, res) => {
     try {
