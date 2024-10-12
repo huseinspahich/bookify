@@ -13,8 +13,20 @@ const API_URL ="https://api.realinspire.tech/v1/quotes/random";
 const myAPI = "cRd1xHXHy4ga1K/PzOd6LA==Ap5k3YsIxERF5N9Z";
 
 app.get("/", async (req, res) => {
-    res.render("index.ejs");
-})
+    try {
+        const response = await axios.get(API_URL);
+        const result = response.data;
+        console.log(result);
+        res.render("index.ejs", {
+             quote: result[0].content,
+             author: result[0].author
+            });
+    } catch (error) {
+        console.error("Failed to make request:", error.message);
+        res.render("index.ejs", {
+          error: error.message,
+        })};
+}); 
 app.get("/about", async (req, res) => {
     res.render("about.ejs");
 });
