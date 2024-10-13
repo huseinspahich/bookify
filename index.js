@@ -1,7 +1,16 @@
 import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
-import pg from "pg";
+import pg from "pg"; 
+
+const db = new pg.Client ({
+    user: "postgres",
+    host: "localhost",
+    database: "book",
+    password: "10021972",
+    port: 5434,
+});
+db.connect();
 
 const app = express();
 const port = 3000;
@@ -10,16 +19,21 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const API_URL ="https://api.realinspire.tech/v1/quotes/random";
-const myAPI = "AIzaSyD2cfS0e7IvJL-Sud-lwH5wdTR9Q2ntFwc";
+
+let books = [];
 
 app.get("/", async (req, res) => {
     try {
         const response = await axios.get(API_URL);
         const result = response.data;
         console.log(result);
+
+        const dbResponse = await db.query("SELECT * FROM books");
+
         res.render("index.ejs", {
              quote: result[0].content,
-             author: result[0].author
+             author: result[0].author,
+             books: dbResponse.rows
             });
     } catch (error) {
         console.error("Failed to make request:", error.message);
