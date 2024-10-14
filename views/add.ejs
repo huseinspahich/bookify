@@ -10,6 +10,7 @@
                     <form action="/editBook" method="post">
                             <div class="row g-3">
                                 <div class="col-md-6">
+                                    <input type="hidden" name="id" value="<%= book.id %>">
                                     <input type="text" class="form-control" id="title" name="title" placeholder="Book's Title" required="" value="<%= book.title || '' %>"> <br>
                                     <input type="text" class="form-control" id="author" name="author" placeholder="Book's Author" required="" value="<%= book.authors || '' %>"> <br>
                                     <input type="text" class="form-control" id="rating" name="rating" placeholder="Rating out of 10" required="" value="<%= book.rating || '' %>"> <br>  

@@ -19,18 +19,25 @@
               <img src="icons/open-book (1).png" width="30px" height="30px" alt="">
             </a>
     
+            
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <li><a href="/back" class="nav-link px-2 text-white fw-bold me-5 fst-italic ">Bookify</a></li>
               <li><a href="/about" class="nav-link px-2 text-white">About </a></li>
               <li><a href="/contact" class="nav-link px-2 text-white">Contact</a></li>
+              <form action="/sort" method="POST">
               <li><a href="" class="nav-link px-2 text-white dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown">Sort</a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="#">Title</a></li>
-                <li><a class="dropdown-item" href="#">Best</a></li>
-                <li><a class="dropdown-item" href="#">Newest</a></li>
+                <li>
+                  <button type="submit" name="sort" value="title" class="dropdown-item">Title</button>
+              </li>
+              <li>
+                  <button type="submit" name="sort" value="rating" class="dropdown-item">Best</button>
+              </li>
             </ul>
             </li>
             </ul>
+            </form>
+            
     
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" action="/add">
               <a href="/add" class="nav-link px-2 text-white">Add Book</a>
