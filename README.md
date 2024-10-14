@@ -23,3 +23,5 @@ The application integrates a quote API to provide inspirational quotes alongside
 ![3](https://github.com/user-attachments/assets/bf74840e-929d-4c37-b131-6a2612682cdd)
 ![4](https://github.com/user-attachments/assets/1d1d0142-7529-46aa-a49a-2a4c807c3e0c)
 ![6](https://github.com/user-attachments/assets/43680f8b-f7ec-48d4-a135-08f09367c436)
+-open terminal > type npm install > type node index.js > open new terminal > type node server.js > type in browser: http://localhost:3000
+⚠️ Note: Before running the application, make sure to run npm install to install the required dependencies.
