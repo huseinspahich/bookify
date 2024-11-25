@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    min-height: 100vh; 
+    margin: 0;
+  }
+  .container {
+    flex: 1;
+  }
+  main {
+    text-align: center;
+    flex: 1 0 auto;
+  }
+  
+#hh-link {
+    text-decoration: none;
+    letter-spacing: 0;
+    color: var(--font-medium);
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    height: 38px;
+  }
+
+#hh-logo {
+    width: 35px;
+    height: 35px;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  #hh-link:hover #hh-logo {
+    transform: rotate(360deg) scale(1.2);
+  }

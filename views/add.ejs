@@ -1,0 +1,41 @@
+<%- include('partials/header.ejs') %>
+<div style="height: 85vh;">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <% if (heading) { %>
+                    <h1 class="mb-3"><%= heading %></h1>
+               <% } %>
+                <% if (locals.book) { %>
+                    <form action="/editBook" method="post">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="hidden" name="id" value="<%= book.id %>">
+                                    <input type="text" class="form-control" id="title" name="title" placeholder="Book's Title" required="" value="<%= book.title || '' %>"> <br>
+                                    <input type="text" class="form-control" id="author" name="author" placeholder="Book's Author" required="" value="<%= book.authors || '' %>"> <br>
+                                    <input type="text" class="form-control" id="rating" name="rating" placeholder="Rating out of 10" required="" value="<%= book.rating || '' %>"> <br>  
+                                    <textarea class="form-control" id="summary" name="summary" rows="4" placeholder="Short two line summary" required=""><%= book.summary || '' %></textarea> <br>
+                                    <button type="submit" class="btn btn-primary w-100 fw-bold"><%= submit %></button>
+                                </div>
+                            </div>
+                        </form>
+                <%} else {%>
+                        <form action="/addBook" method="post">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="title" name="title" placeholder="Book's Title" required=""> <br>
+                                    <input type="text" class="form-control" id="author" name="author" placeholder="Book's Author" required=""> <br>
+                                    <input type="text" class="form-control" id="rating" name="rating" placeholder="Rating out of 10" required=""> <br>  
+                                    <textarea class="form-control" id="summary" name="summary" rows="4" placeholder="Short two line summary" required=""></textarea> <br>
+                                    <button type="submit" class="btn btn-primary w-100 fw-bold"><%= submit %></button>
+                                </div>
+                            </div>
+                        </form>
+                    <%} %>
+            </div>
+        </div>
+    </div>
+    
+    
+    </div> 
+    <%- include('partials/footer.ejs') %>
