@@ -24,7 +24,7 @@ Uses bcrypt for securely hashing passwords and express-session for managing user
 ### PostgreSQL Database:
 Stores user and book information in a PostgreSQL database, ensuring data integrity and reliability.   
 
-Technologies Used   
+## Technologies Used   
 - **Frontend**: HTML, CSS, EJS, Bootstrap;
 - **Backend**: Node.js, Express.js;
 - **Database**: PostgreSQL;
