@@ -5,23 +5,23 @@ To ensure secure and seamless interactions, Bookify includes robust authenticati
 With a clean and intuitive interface, Bookify combines powerful functionality with a simple and enjoyable user experience.
    
 ## Key Features
-### Book Management:
+#### Book Management:
 
 - **Add Books**: Easily add new books to your library with essential details like title, author, rating, and a brief summary.  
 - **Edit Books**: Modify book information whenever needed, ensuring your library stays accurate and up-to-date.  
 - **Delete Books**: Remove books from your library with a simple click, helping you keep your collection lean and relevant.  
 - **Sorting Options**: Sort books by title, author, or rating for a customized and efficient browsing experience.  
-### Inspirational Quotes:
+#### Inspirational Quotes:
 Fetches and displays a random quote from the RealInspire API on the homepage, offering motivation and positive energy alongside your book list.   
-### User Authentication:
+#### User Authentication:
 - **Local Authentication**: Users can register and log in with a username and password to securely access their library.
 - **Google OAuth**: Seamless login with Google accounts, providing convenience and security.
-### Dynamic User Interface:
+#### Dynamic User Interface:
 Built with EJS templates, the user interface updates dynamically, offering an interactive experience for users.
 Bootstrap ensures the app is responsive and looks great on mobile devices.
-### Security:
+#### Security:
 Uses bcrypt for securely hashing passwords and express-session for managing user sessions.   
-### PostgreSQL Database:
+#### PostgreSQL Database:
 Stores user and book information in a PostgreSQL database, ensuring data integrity and reliability.   
 
 ## Technologies Used   
