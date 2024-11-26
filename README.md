@@ -1,7 +1,8 @@
 # bookify
-Bookify is a web application that allows users to manage a personal library of books.    
-Users can add, edit, and delete book entries while also sorting them by title or rating.    
-The application integrates a quote API to provide inspirational quotes alongside the book showcase.   
+Bookify is a dynamic web application designed to help users efficiently manage their personal book library. With full CRUD capabilities (Create, Read, Update, Delete), users can easily add new books, modify existing entries, or remove books from their collection. Books can be organized and sorted by various attributes, including title, author, and rating, ensuring a personalized browsing experience.
+In addition to managing their library, users are greeted with a source of inspiration **Bookify** integrates a quote API that randomly fetches motivational quotes to enhance the overall user experience.
+To ensure secure and seamless interactions, Bookify includes robust authentication options. Users can log in or register through local authentication or Google OAuth, with all passwords securely hashed using bcrypt. User sessions are handled efficiently through express-session, making the app both secure and user-friendly.
+With a clean and intuitive interface, Bookify combines powerful functionality with a simple and enjoyable user experience.
    
 ## Key Features
 ### Book Management:
@@ -29,32 +30,31 @@ Technologies Used
 - **Database**: PostgreSQL;
 - **API**: Axios for making HTTP requests;
 
+## Getting Started
+Follow the instructions below to get local copy up and running.
+**Some features require a set up of .env file.**
+### Installation
+1. Clone the repo
+   ```sh
+   git clone https://github.com/huseinspahich/bookify.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Run command below to start the application.
+   ```sh
+   node index.js
+   ```
+   Website home page can be accessed on http://localhost:3000.
+       
+![register](https://github.com/user-attachments/assets/2db94bdd-d5e7-4d79-b6ff-636601f2b9dc)
+![login](https://github.com/user-attachments/assets/6fdc5769-1c30-4435-b3c0-4123fe9f50be)
+![Dizajn bez naslova](https://github.com/user-attachments/assets/951ccac5-7cb1-4c23-88a7-72ba13c4dcff)
+
+
 ![1](https://github.com/user-attachments/assets/0f33ed8b-68ed-4c9e-a508-90d72e6e876a)
 ![2](https://github.com/user-attachments/assets/120f1e3f-9bd5-4e86-8f35-2916883b6dba)
 ![3](https://github.com/user-attachments/assets/bf74840e-929d-4c37-b131-6a2612682cdd)
 ![4](https://github.com/user-attachments/assets/1d1d0142-7529-46aa-a49a-2a4c807c3e0c)
 ![6](https://github.com/user-attachments/assets/43680f8b-f7ec-48d4-a135-08f09367c436)     
-## Installation
-**1.Install NPM**   
-npm install    
-**2. Set Up PostgreSQL Database**   
-Open PostgreSQL and create a database named book          
-CREATE TABLE books (     
-    id SERIAL PRIMARY KEY,     
-    title VARCHAR(255),      
-    authors VARCHAR(255),      
-    rating NUMERIC(2, 1),      
-    summary TEXT      
-);      
-**4. Configure Environment Variables**      
-Create a .env file in the root of the project and add your PostgreSQL configuration as follows:     
-PG_USER=your_pg_username      
-PG_HOST=localhost      
-PG_DATABASE=book      
-PG_PASSWORD=your_pg_password       
-PG_PORT=5434        
-Make sure to replace your_pg_username and your_pg_password with your actual PostgreSQL credentials.   
-**5. Start the Server**     
-node index.js    
-**6. Access the Application**    
-Open http://localhost:3000 in your browser to use the Book Collection App.    
