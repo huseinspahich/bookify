@@ -16,7 +16,7 @@ router.get('/auth/google',
         [ 'email', 'profile' ] }
   ));
 
-router.get('/auth/google/site',
+router.get('/auth/google/secrets',
     passport.authenticate('google', {
         successRedirect: '/index',
         failureRedirect: '/login'
