@@ -8,7 +8,7 @@ export const register = async(req,res) => {
     const password = req.body.password;
     
     try {
-        const checkResult = await db.query("SELECT * FROM users1 WHERE email = $1",[email]);
+        const checkResult = await db.query("SELECT * FROM users WHERE email = $1",[email]);
         if (checkResult.rows.length > 0) {
             res.send("Already exists");
         } else {
@@ -16,11 +16,11 @@ export const register = async(req,res) => {
                 if (err) {
                     console.log(err)
                 } else {
-                    const result = await db.query("INSERT INTO users1(email,password) VALUES ($1,$2)",[email,hash]);
+                    const result = await db.query("INSERT INTO users (email,password) VALUES ($1,$2)",[email,hash]);
                     const user = result.rows[0];
                     req.login(user,(err) => {
                         console.log(err);
-                        res.redirect("/site")
+                        res.redirect("/index")
                     })
                 }
             })

@@ -1,7 +1,8 @@
 import passport from "passport";
 import {Strategy} from "passport-local";
+import GoogleStrategy from "passport-google-oauth2"
 import bcrypt from "bcrypt";
-import db from "../models/userModel";
+import db from "../models/userModel.js";
 
 passport.use("local",new Strategy(async function verify(username, password, cb) {
     try {

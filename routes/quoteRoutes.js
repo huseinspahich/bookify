@@ -3,6 +3,7 @@ import { renderHomePage } from "../controllers/quoteController.js";
 
 const router = express.Router();
 
-router.get("/home", renderHomePage);
+router.get("/index", renderHomePage);
+
 
 export default router;

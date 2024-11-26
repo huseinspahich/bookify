@@ -7,6 +7,7 @@ const router = express.Router();
 const API_URL = "https://api.realinspire.tech/v1/quotes/random";
 
 export const renderHomePage = async (req, res) => {
+  if (req.isAuthenticated()) {
     try {
         const sort = req.query.sort || 'id';
         const response = await axios.get(API_URL);
@@ -14,13 +15,16 @@ export const renderHomePage = async (req, res) => {
         console.log(result);
         const books = await showBooks(sort);
         res.render("index.ejs", {
-             quote: result[0].content,
-             author: result[0].author,
+             quote: result[0]?.content,
+             author: result[0]?.author,
              books,
             });
     } catch (error) {
         console.error("Failed to make request:", error.message);
         res.render("index.ejs", {
           error: error.message,
-        })};
+        })}
+  } else {
+    res.redirect("/login");   
+}
 }

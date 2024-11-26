@@ -7,6 +7,7 @@ import bookRoutes from "./routes/bookRoutes.js";
 import quoteRoutes from "./routes/quoteRoutes.js";
 import miscRoutes from "./routes/miscRoutes.js";
 import staticRoutes from "./routes/staticRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 
 env.config();
 const app = express();
@@ -26,10 +27,14 @@ app.use(session ({
 app.use(passport.initialize());
 app.use(passport.session());
 
+import "./config/passportConfig.js";
+
+app.use("/",authRoutes);
 app.use("/",bookRoutes);
 app.use("/",quoteRoutes);
 app.use("/",miscRoutes);
 app.use("/",staticRoutes);
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
