@@ -2,12 +2,26 @@
 Bookify is a web application that allows users to manage a personal library of books.    
 Users can add, edit, and delete book entries while also sorting them by title or rating.    
 The application integrates a quote API to provide inspirational quotes alongside the book showcase.   
+   
+## Key Features
+### Book Management:
 
-Features   
-- **Book Management**: Add, edit, delete, and view books in a PostgreSQL database.   
-- **Sorting Options**: Sort books by attributes like title, author, or rating.   
-- **Random Quotes**: Fetches and displays a random quote on the homepage from RealInspire API.   
-- **User-Friendly Interface**: Dynamic EJS templates for a smooth user experience.     
+- **Add Books**: Easily add new books to your library with essential details like title, author, rating, and a brief summary.  
+- **Edit Books**: Modify book information whenever needed, ensuring your library stays accurate and up-to-date.  
+- **Delete Books**: Remove books from your library with a simple click, helping you keep your collection lean and relevant.  
+- **Sorting Options**: Sort books by title, author, or rating for a customized and efficient browsing experience.  
+### Inspirational Quotes:
+Fetches and displays a random quote from the RealInspire API on the homepage, offering motivation and positive energy alongside your book list.   
+### User Authentication:
+- **Local Authentication**: Users can register and log in with a username and password to securely access their library.
+- **Google OAuth**: Seamless login with Google accounts, providing convenience and security.
+### Dynamic User Interface:
+Built with EJS templates, the user interface updates dynamically, offering an interactive experience for users.
+Bootstrap ensures the app is responsive and looks great on mobile devices.
+### Security:
+Uses bcrypt for securely hashing passwords and express-session for managing user sessions.   
+### PostgreSQL Database:
+Stores user and book information in a PostgreSQL database, ensuring data integrity and reliability.   
 
 Technologies Used   
 - **Frontend**: HTML, CSS, EJS, Bootstrap;
