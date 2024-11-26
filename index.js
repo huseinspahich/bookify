@@ -1,6 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
 import env from "dotenv";
+import session from "express-session";
+import passport from "passport";
 import bookRoutes from "./routes/bookRoutes.js";
 import quoteRoutes from "./routes/quoteRoutes.js";
 import miscRoutes from "./routes/miscRoutes.js";
@@ -13,6 +15,16 @@ const port = 3000;
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(session ({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
+  maxAge: 1000 * 60 * 60 * 24,
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use("/",bookRoutes);
 app.use("/",quoteRoutes);

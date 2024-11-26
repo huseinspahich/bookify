@@ -18,4 +18,5 @@ export const addPage = async (req, res) => {
             heading: "Add Book",
             submit: "Add New Book"
         });
-    };
+};
+
