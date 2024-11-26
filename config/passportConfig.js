@@ -63,3 +63,5 @@ passport.serializeUser(function(user, cb) {
 passport.deserializeUser(function(user, cb) {
       return cb(null, user);
 });
+
+export default passport;
